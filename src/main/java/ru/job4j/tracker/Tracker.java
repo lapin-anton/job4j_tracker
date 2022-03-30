@@ -18,14 +18,14 @@ public class Tracker {
     }
 
     public Item[] findByName(String key) {
-        Item[] rsl = new Item[0];
+        Item[] rsl = new Item[size];
+        int count = 0;
         for (int i = 0; i < size; i++) {
             if (items[i].getName().equals(key)) {
-                rsl = Arrays.copyOf(rsl, rsl.length + 1);
-                rsl[rsl.length - 1] = items[i];
+                rsl[count++] = items[i];
             }
         }
-        return rsl;
+        return Arrays.copyOf(rsl, count);
     }
 
     public Item findById(int id) {
