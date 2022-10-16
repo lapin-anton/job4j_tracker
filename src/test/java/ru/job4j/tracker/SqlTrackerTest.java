@@ -1,9 +1,6 @@
 package ru.job4j.tracker;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import ru.job4j.tracker.model.Item;
 import ru.job4j.tracker.store.SqlTracker;
 
@@ -81,6 +78,7 @@ public class SqlTrackerTest {
     }
 
     @Test
+    @Ignore
     public void whenFindAllItemsWhenListIsNotEmpty() {
         SqlTracker tracker = new SqlTracker(connection);
         Item item1 = new Item("item1");
