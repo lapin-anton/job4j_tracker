@@ -6,6 +6,7 @@ import ru.job4j.tracker.io.input.Input;
 import ru.job4j.tracker.io.input.ValidateInput;
 import ru.job4j.tracker.io.output.ConsoleOutput;
 import ru.job4j.tracker.io.output.Output;
+import ru.job4j.tracker.store.HbmTracker;
 import ru.job4j.tracker.store.SqlTracker;
 import ru.job4j.tracker.store.Store;
 
@@ -42,7 +43,7 @@ public class StartUI {
     public static void main(String[] args) {
         Output output = new ConsoleOutput();
         Input input = new ValidateInput(output, new ConsoleInput());
-        Store tracker = new SqlTracker();
+        Store tracker = new HbmTracker();
         List<UserAction> actions = List.of(
             new CreateAction(output),
             new ShowAllAction(output),
